@@ -1,0 +1,93 @@
+
+ 1. Anonymous function and IIFE:-
+
+ a. Print odd numbers in an array
+
+    function(array){
+                  for(var i = 0 ; i< array.length ; i++){
+                        if(array[i]%2!=0){
+                           console.log(array[i])
+                        } 
+                   }
+                }
+
+ b. Convert all the strings to title caps in a string array
+
+    function (str) {
+                    str = str.toLowerCase().split(' ');
+                    for (var i = 0; i < str.length; i++) {
+                      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+                    } 
+                    return str.join(' ');
+                  }
+
+ c. Sum of all numbers in an array
+
+    function(array){
+                  var sum = 0;
+                  for(var i = 0 ; i< array.length ; i++){
+                     sum = sum + array[i];
+                   }
+                   return sum;
+                }
+
+ d. Return all the prime numbers in an array
+
+    function(numArray){
+                      numArray = numArray.filter((number) => {
+                        for (var i = 2; i <= Math.sqrt(number); i++) {
+                          if (number % i === 0) return false;
+                        }
+                        return true;
+                      });
+                      console.log(numArray);
+                  }
+
+ e. Return all the palindromes in an array
+
+    function (arr, n){
+        for (let i = 0; i < n; i++){
+            let ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+    }
+
+ f. Return medium of two sorted arrays of same size
+        
+    function(array){
+        let dup = [...new Set(array)];
+        console.log(dup);
+    }
+
+ g. Remove duplicates from an array 
+
+    let findDuplicates = function () {
+  
+      const yourArray = [1, 1, 2, 3, 4, 5, 5]
+      let duplicates = []
+      const tempArray = [...yourArray].sort() 
+      for (let i = 0; i < tempArray.length; i++) {
+        if (tempArray[i + 1] === tempArray[i]) {
+          duplicates.push(tempArray[i])
+        }
+      }
+      console.log(duplicates) 
+    }
+    findDuplicates()                                        
+
+ h. Rotate an array by k times
+
+    function(array , k){
+         k = k % a.length;
+         if(k < 0){
+           k += a.length;
+         }
+
+         reverse(a, 0, a.length - k - 1);
+         reverse(a, a.length - k, a.length - 1);
+         reverse(a, 0, a.length - 1);
+    }                 
+
+    
